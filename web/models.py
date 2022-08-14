@@ -34,7 +34,6 @@ class SavorTeam(BaseModel):
         null=True,
         verbose_name="团队内部职位",
     )
-
     is_active = models.BooleanField(
         default=True, verbose_name="是否是有效"
     )
