@@ -1,6 +1,5 @@
 {% load staticfiles%}
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -176,11 +175,11 @@
             这是一个Web3实验室
             <br />
           </span>
-          <div class="group_7 flex-col">
-            <button class="text-wrapper_3 flex-col">
-              <a class="text_9" href="#">申请加入</a>
-            </button>
-          </div>
+<!--          <div class="group_7 flex-col">-->
+<!--            <button class="text-wrapper_3 flex-col">-->
+<!--              <a class="text_9" href="{% url 'join_submit'%}?show_window=yes">申请加入</a>-->
+<!--            </button>-->
+<!--          </div>-->
         </div>
         <a class="text_10" href="#">开发者</a>
         <div class="box_9 flex-col justify-between">
@@ -250,40 +249,21 @@
         </span>
       </div>
       <div class="group_9 flex-row justify-between">
-        <div class="block_16 flex-col">
-             <img src="{% static 'img/SketchPng1e8d62d0515705aabcf77dc8fc0a96440cce5474965b9040f3420bb0fd06885a.png' %}" />
-        </div>
-        <div class="block_17 flex-col">
-             <img src="{% static 'img/SketchPng1e8d62d0515705aabcf77dc8fc0a96440cce5474965b9040f3420bb0fd06885a.png' %}" />
-        </div>
-        <div class="block_18 flex-col">
-           <img src="{% static 'img/SketchPng1e8d62d0515705aabcf77dc8fc0a96440cce5474965b9040f3420bb0fd06885a.png' %}" />
-        </div>
-        <div class="block_19 flex-col">
-          <img src="{% static 'img/SketchPng1e8d62d0515705aabcf77dc8fc0a96440cce5474965b9040f3420bb0fd06885a.png' %}" />
-        </div>
-        <div class="block_20 flex-col">
-           <img src="{% static 'img/SketchPng1e8d62d0515705aabcf77dc8fc0a96440cce5474965b9040f3420bb0fd06885a.png' %}" />
-        </div>
-        <div class="block_21 flex-col">
-          <img src="{% static 'img/SketchPng1e8d62d0515705aabcf77dc8fc0a96440cce5474965b9040f3420bb0fd06885a.png' %}" />
-        </div>
+        {% for team in team_lists%}
+          <div class="block_16 flex-col">
+               <img src="{% url 'index' %}media/{{ team.image }}" />
+          </div>
+        {% endfor %}
       </div>
       <div class="text-wrapper_7 flex-row justify-between">
-        <span class="text_34">BIng</span>
-        <span class="text_35">BIng</span>
-        <span class="text_36">BIng</span>
-        <span class="text_37">BIng</span>
-        <span class="text_38">BIng</span>
-        <span class="text_39">BIng</span>
+        {% for team in team_lists%}
+            <span class="text_34">{{ team.position }}</span>
+        {% endfor %}
       </div>
       <div class="text-wrapper_8 flex-row justify-between">
-        <span class="text_40">我们的CEO</span>
-        <span class="text_41">我们的CEO</span>
-        <span class="text_42">我们的CEO</span>
-        <span class="text_43">我们的CEO</span>
-        <span class="text_44">我们的CEO</span>
-        <span class="text_45">我们的CEO</span>
+        {% for team in team_lists%}
+            <span class="text_40">{{ team.name }}</span>
+        {% endfor %}
       </div>
     </div>
     <div class="block_22 flex-col">
@@ -296,7 +276,7 @@
             <br />
           </span>
           <span class="paragraph_10">
-            项目合作
+            合作伙伴
             <br />
             <br />
           </span>
@@ -316,7 +296,7 @@
             </span>
           </div>
           <div class="text-wrapper_10 flex-col justify-between">
-            <span class="text_46">公司</span>
+            <span class="text_46">SavourDao 团队</span>
             <span class="paragraph_13">
               <a href="#">加入我们</a>
               <br />
@@ -345,37 +325,37 @@
         <a href="#">开发者文档</a>
         <br />
         <br />
-        <a href="#">下载</a>
-        <br />
-        <br />
         <a href="#">关于我们</a>
         <br />
         <br />
-        <a href="#">GitHub</a>
+        <a href="https://github.com/savourDao">GitHub</a>
         <br />
         <br />
       </span>
       <span class="paragraph_17">
-        <a href="#">提交DAPP</a>
+        <a href="https://www.wenwoha.com/">问我社区</a>
         <br />
         <br />
-        <a href="#">提交Token</a>
+        <a href="https://www.chaineye.info/">链眼社区</a>
         <br />
         <br />
-        <a href="#">提交NFT</a>
+        <a href="https://gingernet.vip/">木姜子科技</a>
         <br />
         <br />
-        <a href="#">品牌Logo</a>
+        <a href="http://bj.gingernet.vip/">币家社区</a>
         <br />
         <br />
         <br />
       </span>
       <span class="paragraph_18">
-        Join&nbsp;our&nbsp;newsletter
+        欢迎加入我们
         <br />
       </span>
     </div>
   </div>
+  {% if show_window == "yes" %}
+     {% include 'web/window.html' %}
+  {% endif %}
 </body>
 
 </html>
