@@ -1,39 +1,35 @@
 {% load staticfiles%}
-<!--<link rel="stylesheet" type="text/css" href="{% static 'css/dialog.css'%}" />-->
-<!--<link rel="stylesheet" type="text/css" href="{% static 'css/dialog.response.css'%} " />-->
-<div class="modal-dialog">
-<div class="page flex-col">
-    <div class="block_1 flex-col">
-      <span class="text_1">欢迎加入Savour&nbsp;DAO</span>
-      <span class="text_2">请选择您的意向岗位</span>
-      <select class="box_1 flex-row">
-        <option value="1">全部</option>
-        <option value="2">所有</option>
-        <option value="3">allin</option>
-        <div class="group_1 flex-col"></div>
+<form action="{% url 'join_submit' %}" method="get">
+  <div class="window_block_1 flex-col">
+      <span class="window_text_1">欢迎加入Savour&nbsp;DAO</span>
+      <span class="window_text_2">请选择您的意向岗位</span>
+      <select class="window_box_1 flex-row">
+          {% for pos in pos_lists %}
+            <option value="1">{{ pos.name }}</option>
+          {% endfor %}
+          <div class="window_group_1 flex-col"></div>
       </select>
-      <span class="text_4">请填写您联系方式</span>
-      <div class="box_2 flex-row justify-between">
-        <span class="text_5">微信</span>
-        <input class="block_2 flex-col" type="text" />
+      <span class="window_text_4">请填写您联系方式</span>
+      <div class="window_box_2 flex-row justify-between">
+          <span class="window_text_5">微信</span>
+          <input class="window_block_2 flex-col" type="text" />
       </div>
-      <div class="box_3 flex-row justify-between">
-        <span class="text_6">邮箱</span>
-        <input class="group_2 flex-col" type="text" />
+      <div class="window_box_3 flex-row justify-between">
+          <span class="window_text_6">邮箱</span>
+          <input class="window_group_2 flex-col" type="text" />
       </div>
-      <div class="box_4 flex-row justify-between">
-        <span class="text_7">手机</span>
-        <input class="group_3 flex-col" type="text" />
+      <div class="window_box_4 flex-row justify-between">
+          <span class="window_text_7">手机</span>
+          <input class="window_group_3 flex-col" type="text" />
       </div>
-      <span class="text_8">请填写您的项目经验</span>
-      <textarea class="box_5 flex-col"></textarea>
-      <span class="text_9">请填写您的专业技能</span>
-      <textarea class="box_6 flex-col"></textarea>
-      <div class="box_7 flex-col">
-        <button class="text-wrapper_1 flex-col" style="cursor: pointer;">
-          <span class="text_10">提交</span>
-        </button>
+      <span class="window_text_8">请填写您的项目经验</span>
+      <textarea class="window_box_5 flex-col"></textarea>
+      <span class="window_text_9">请填写您的专业技能</span>
+      <textarea class="window_box_6 flex-col"></textarea>
+      <div class="window_box_7 flex-col">
+          <button class="window_text-wrapper_1 flex-col" style="cursor: pointer;">
+              <span class="window_text_10">提交</span>
+          </button>
       </div>
-    </div>
   </div>
-</div>
+</form>

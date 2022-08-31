@@ -7,6 +7,7 @@
   <script src="{% static 'js/flexible.js' %}"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/common.css'%}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/index.response.css'%} " />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/window.response.css'%} " />
 </head>
 <body>
   <div class="page flex-col">
@@ -41,13 +42,13 @@
           </div>
         </div>
         <span class="paragraph_1">
-          你可以在一个地方掌控你的所有Token，NFT等加密资产，
+          多链支持的 HD，社交恢复加 MPC 钱包，
           <br />
-          我们支持数十万个代币和上百个&nbsp;dapps&nbsp;，
+          NFT社交,租赁,代言,推荐,追踪,交易,赞赏,质押等新玩法的场地&nbsp;，
           <br />
-          你可以通过手机或浏览器上探索去中心化世界，
+          隐私社交，畅聊场地，去中心化的币圈微信
           <br />
-          我们以行业领先的安全性技术保护大家的数字资产。
+          全方位去中心化的项目支持的 Dapp 浏览器。
         </span>
       </div>
       <div class="block_4 flex-col">
@@ -151,12 +152,12 @@
       <div class="block_6 flex-row">
         <div class="block_7 flex-col"></div>
         <span class="paragraph_4">
-          让我们以去中心化的身份，链接到元宇宙世界，
+          让我们以去中心化的身份，链接到区块链世界，
           <br />
-          让我们通过元宇宙的入口，去探索下一个文明。
+          数字货币支付，交易，交流，赞赏和红包等，隐私社交，畅聊天下大事儿。
         </span>
         <span class="paragraph_5">
-          这将是一个通向元宇宙的入口
+          完全去中心化的隐私社交场所
           <br />
         </span>
       </div>
@@ -178,11 +179,11 @@
             这是一个Web3实验室
             <br />
           </span>
-<!--          <div class="group_7 flex-col">-->
-<!--            <button class="text-wrapper_3 flex-col">-->
-<!--              <a class="text_9" href="{% url 'join_submit'%}?show_window=yes">申请加入</a>-->
-<!--            </button>-->
-<!--          </div>-->
+          <div class="group_7 flex-col">
+            <button class="text-wrapper_3 flex-col">
+              <a class="text_9" href="{% url 'join_submit'%}?show_window=yes">申请加入</a>
+            </button>
+          </div>
         </div>
         <a class="text_10" href="#">开发者</a>
         <div class="box_9 flex-col justify-between">
@@ -227,9 +228,9 @@
     </div>
     <div class="image-wrapper_8 flex-col">
       <img class="image_32" referrerpolicy="no-referrer"
-        src="{% static 'img/SketchPngf3403fc1402717441d104b3d8dd880471350c5718d65d02afc81dd89084b3f92.png' %}" />
+        src="{% static 'img/erweima.png' %}" />
     </div>
-    <span class="text_21">这是第一个以DAO形式打造的NFT钱包</span>
+    <span class="text_21">一个承载NFT新玩法的 HD+社交恢复+MPC钱包</span>
     <div class="block_14 flex-col">
       <div class="image-wrapper_9 flex-col">
         <img class="image_33" referrerpolicy="no-referrer"
@@ -251,22 +252,18 @@
           <br />
         </span>
       </div>
-      <div class="group_9 flex-row justify-between">
-        {% for team in team_lists%}
-          <div class="block_16 flex-col">
-               <img src="{% url 'index' %}media/{{ team.image }}" />
-          </div>
-        {% endfor %}
-      </div>
-      <div class="text-wrapper_7 flex-row justify-between">
-        {% for team in team_lists%}
-            <span class="text_34">{{ team.position }}</span>
-        {% endfor %}
-      </div>
-      <div class="text-wrapper_8 flex-row justify-between">
-        {% for team in team_lists%}
-            <span class="text_40">{{ team.name }}</span>
-        {% endfor %}
+      <div class="group_8 flex-row justify-between">
+        <ul class="team-list">
+           {% for team in team_lists%}
+            <li>
+                <div class="box_10 flex-col">
+                   <img src="{% url 'index' %}media/{{ team.image }}" />
+                </div>
+                <span class="text_22">{{ team.name }}</span>
+                <span class="text_28">{{ team.position }}</span>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
     <div class="block_22 flex-col">
