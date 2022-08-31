@@ -1,5 +1,6 @@
 {% load staticfiles%}
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/index.response.css'%} " />
   <link rel="stylesheet" type="text/css" href="{% static 'css/window.response.css'%} " />
 </head>
+
 <body>
   <div class="page flex-col">
     <div class="block_1 flex-col">
@@ -18,16 +20,14 @@
           <div class="box_2 flex-row justify-between">
             <div class="group_1 flex-col">
               <div class="box_3 flex-col justify-between">
-                <img class="label_1" referrerpolicy="no-referrer"
-                  src="{% static 'img/ios.png'%}" />
+                <img class="label_1" referrerpolicy="no-referrer" src="{% static 'img/ios.png'%}" />
                 <span class="text_1">IOS</span>
               </div>
             </div>
             <div class="group_2 flex-col">
               <div class="group_3 flex-col justify-between">
                 <div class="group_4 flex-col">
-                   <img class="label_1" referrerpolicy="no-referrer"
-                  src="{% static 'img/andorid.png'%}" />
+                  <img class="label_1" referrerpolicy="no-referrer" src="{% static 'img/andorid.png'%}" />
                 </div>
                 <span class="text_2" style="margin-top:8px">Android</span>
               </div>
@@ -35,8 +35,7 @@
           </div>
           <div class="box_4 flex-col">
             <div class="box_5 flex-col">
-              <img class="image_1" referrerpolicy="no-referrer"
-                src="{% static 'img/andorid.png' %}" />
+              <img class="image_1" referrerpolicy="no-referrer" src="{% static 'img/andorid.png' %}" />
               <span class="text_3">Download&nbsp;for</span>
             </div>
           </div>
@@ -227,8 +226,7 @@
       </div>
     </div>
     <div class="image-wrapper_8 flex-col">
-      <img class="image_32" referrerpolicy="no-referrer"
-        src="{% static 'img/erweima.png' %}" />
+      <img class="image_32" referrerpolicy="no-referrer" src="{% static 'img/erweima.png' %}" />
     </div>
     <span class="text_21">一个承载NFT新玩法的 HD+社交恢复+MPC钱包</span>
     <div class="block_14 flex-col">
@@ -254,12 +252,12 @@
       </div>
       <div class="group_8 flex-row justify-between">
         <ul class="team-list">
-           {% for team in team_lists%}
-            <li>
-                <img class="box_10 flex-col" src="{% url 'index' %}media/{{ team.image }}" />
-                <span class="text_22">{{ team.name }}</span>
-                <span class="text_28">{{ team.position }}</span>
-            </li>
+          {% for team in team_lists%}
+          <li>
+            <img class="box_10 flex-col" src="{% url 'index' %}media/{{ team.image }}" />
+            <p class="text_22">{{ team.name }}</p>
+            <p class="text_28">{{ team.position }}</p>
+          </li>
           {% endfor %}
         </ul>
       </div>
@@ -352,7 +350,7 @@
     </div>
   </div>
   {% if show_window == "yes" %}
-     {% include 'web/window.html' %}
+  {% include 'web/window.html' %}
   {% endif %}
 </body>
 
