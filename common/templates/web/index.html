@@ -256,9 +256,7 @@
         <ul class="team-list">
            {% for team in team_lists%}
             <li>
-                <div class="box_10 flex-col">
-                   <img src="{% url 'index' %}media/{{ team.image }}" />
-                </div>
+                <img class="box_10 flex-col" src="{% url 'index' %}media/{{ team.image }}" />
                 <span class="text_22">{{ team.name }}</span>
                 <span class="text_28">{{ team.position }}</span>
             </li>
