@@ -1,18 +1,39 @@
-## SavourDao 官网
+<!--
+parent:
+  order: false
+-->
 
-本项目使用 python Django 编写, 依赖版本为 python3 以上，推荐 python3.8.*
+<div align="center">
+  <h1> Savour Offical Website Repo</h1>
+</div>
 
-## 项目部署
+<div align="center">
+  <a href="https://github.com/SavourDao/hailstone/releases/latest">
+    <img alt="Version" src="https://img.shields.io/github/tag/SavourDao/savour-core.svg" />
+  </a>
+  <a href="https://github.com/SavourDao/hailstone/blob/main/LICENSE">
+    <img alt="License: Apache-2.0" src="https://img.shields.io/github/license/SavourDao/savour-core.svg" />
+  </a>
+   <a href="https://www.python.org/downloads/">
+    <img alt="License: Apache-2.0" src="http://img.shields.io/badge/Python3.*-ff3366.svg"/>
+  </a>
+  
+ 
+</div>
 
-### 1. 安装依赖
+This project is written in python Django, the dependency version is above python3, python3.8.* is recommended
+
+## Project deployment
+
+### 1.install dependencies
 
 `pip3 install -r requirements.txt`
 
-### 2.生成数据库
+### 2.migrate database
 
 `python3 manager migrations`
 
-### 3.运行开发
+### 3. run dev
 
 `python3 manager runserver`
 
